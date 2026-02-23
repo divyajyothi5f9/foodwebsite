@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reset Password</title>
+</head>
+<body>
+  <h2>Set New Password</h2>
+
+  <input type="password" id="newpass" placeholder="New Password" required>
+  <input type="password" id="confirmpass" placeholder="Confirm Password" required>
+
+  <button onclick="resetPassword()">Reset Password</button>
+
+  <script>
+    function resetPassword() {
+      const newpass = document.getElementById("newpass").value;
+      const confirmpass = document.getElementById("confirmpass").value;
+
+      if (newpass === "" || confirmpass === "") {
+        alert("Please fill all fields");
+      } else if (newpass !== confirmpass) {
+        alert("Passwords do not match");
+      } else {
+        alert("Password updated successfully");
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+</body>
+</html>
